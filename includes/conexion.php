@@ -1,13 +1,11 @@
 <?php
+// Ejemplo de conexión. Remplaza con tus datos.
 $host = 'localhost';
-$dbname = 'Condominios';
-$username = 'root'; // usuario por defecto en XAMPP
-$password = ''; // sin contraseña
+$db   = 'nombre_de_tu_bd';
+$user = 'tu_usuario';
+$pass = 'tu_contraseña';
+$charset = 'utf8mb4';
 
-try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Error de conexión: " . $e->getMessage());
-}
+$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+// ... (resto de tu lógica de conexión PDO) ...
 ?>
